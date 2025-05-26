@@ -29,16 +29,17 @@ fun App() {
 @Composable
 fun Content(modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("") }
+    var res by remember { mutableStateOf("")}
     Column(modifier = modifier) {
         OutlinedTextField(
             text,
             onValueChange = { text = it },
             modifier = Modifier.fillMaxWidth()
         )
-        Button(onClick = {}){
+        Button(onClick = { res = text}){
             Text("Нажать нежно")
         }
-        Text(text)
+        Text(res)
     }
 }
 
