@@ -1,43 +1,28 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import ru.gr05307.ui.PaintPanel
+import ru.gr05307.viewmodels.MainViewModel
 
 @Composable
 @Preview
-fun App() {
+fun App(viewModel: MainViewModel= MainViewModel()) {
     MaterialTheme {
-        Content(Modifier.fillMaxWidth())
-    }
-}
-
-@Composable
-fun Content(modifier: Modifier = Modifier) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(20.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Button(onClick = {}) {
-            Text("Нажать нежно")
+        PaintPanel(Modifier.fillMaxSize()){
+            viewModel.paint(it)
         }
-        Text("Привет, Мир!")
     }
 }
 
 fun main(): Unit = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "Окно первого приложения"
+        title = "Фрактал - 2025 (гр. 05-307)"
     ) {
         App()
     }
