@@ -13,4 +13,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "GUI2025"
+rootProject.name = "Fractal2025"
