@@ -31,7 +31,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "GUI2025"
+            packageName = "Fractal2025"
             packageVersion = "1.0.0"
         }
     }
